@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"tir/auto"
 	"tir/models"
 	"tir/protocol"
 	"tir/storage"
@@ -32,6 +33,7 @@ func main() {
 		fmt.Println("7. Импорт сценария из HEX-строки")
 		fmt.Println("8. Быстрое создание сценария (гарантированно работающего)")
 		fmt.Println("9. Отладочная отправка сценария")
+		fmt.Println("10. Автоматический режим (по типу пульта и дистанции)")
 		fmt.Println("0. Выход")
 
 		var choice string
@@ -57,6 +59,8 @@ func main() {
 			ui.QuickCreateScenario(scenarios)
 		case "9":
 			ui.DebugSendScenario(scenarios)
+		case "10":
+			auto.AutoModeMenu(scenarios)
 		case "0":
 			fmt.Println("Завершение работы...")
 			return
